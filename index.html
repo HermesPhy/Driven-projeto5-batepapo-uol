@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="estilos.css">
+
+    <title>Bate-Papo UOL</title>
+</head>
+
+<body>
+
+    <div class="inputWindow">
+        <img src="imagens/logoUol.png" alt="Logo da UOL">
+        <input type="text" placeholder="Digite seu nome" data-identifier="enter-name">
+        <button onclick="enterTheRoom()" data-identifier="start">Entrar</button>
+        <img class="loading hidden" src="imagens/loading-icegif-1.gif" alt="loading">
+        <span class="hidden">Entrando...</span>
+    </div>
+
+    <header>
+        <img src="imagens/logoUol.png" alt="Logo da UOL">
+        <ion-icon name="people" onclick="openMenu()"></ion-icon>
+    </header>
+
+    <main></main>
+
+    <footer>
+        <div class="sendReserved">
+            <input type="text" placeholder="Escreva aqui...">
+            <span class="hidden"></span>
+        </div>
+        <ion-icon name="paper-plane-outline" onclick="sendMessage()" data-identifier="send-message"></ion-icon>
+    </footer>
+
+    <div class="shadowMenu hidden" onclick="closerMenu()"></div>
+
+    <div class="mainMenu hidden">
+        <div class="users">
+            <h3>Escolha um contato para enviar mensagem:</h3>
+            <div class="choose user" onclick="select(this,'users')" data-identifier="participant">
+                <ion-icon name="people"></ion-icon>
+                <p>Todos</p>
+                <ion-icon name="checkmark-sharp" class="check selected"></ion-icon>
+            </div>
+
+            <div class="newUsers"></div>
+        </div>
+
+        <div class="visibilityMenu">
+            <h3>Escolha a visibilidade:</h3>
+            <div class="choose visible" onclick="select(this,'visibilityMenu')" data-identifier="visibility">
+                <ion-icon name="lock-open"></ion-icon>
+                <p>Público</p>
+                <ion-icon name="checkmark-sharp" class="check selected"></ion-icon>
+            </div>
+            <div class="choose visible" onclick="select(this,'visibilityMenu')" data-identifier="visibility">
+                <ion-icon name="lock-closed"></ion-icon>
+                <p>Reservadamente</p>
+                <ion-icon name="checkmark-sharp" class="check"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js "></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js "></script>
+    <script src="script.js "></script>
+
+</body>
+
+</html>
